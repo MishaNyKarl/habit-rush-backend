@@ -22,5 +22,9 @@ app.get('/', (req, res) => {
     res.send('HabitRush API is running...');
 });
 
+const habitRoutes = require('./routes/habitRoutes');
+app.use('/api/habits', habitRoutes);
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
